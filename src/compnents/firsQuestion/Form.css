@@ -6,6 +6,18 @@ form {
   position: relative;
 }
 
+form button {
+  height: 40px;
+  outline: none;
+  border-style: none;
+  background-color: #eaeaea;
+  cursor: pointer;
+
+  position: relative;
+  left: 650px;
+
+  top: 90px;
+}
 form label {
   font-weight: bold;
   font-size: 20px;
@@ -65,9 +77,11 @@ form input {
   animation: line 0.5s forwards;
   opacity: 0;
 }
-.MuiSvgIcon-root {
-  margin-top: 50px;
-}
+/* .MuiSvgIcon-root {
+  margin-top: 30px;
+  cursor: pointer;
+} */
+
 @keyframes line {
   from {
     width: 300px;

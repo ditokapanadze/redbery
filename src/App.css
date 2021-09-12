@@ -39,7 +39,15 @@
 
 .App {
   width: 90vw;
-  height: 80vh;
+  height: 90vh;
   padding: 95px 165px;
   background-color: #eaeaea;
+}
+
+.question__title {
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: left;
+  margin-top: 50px;
+  font-size: 25px;
 }

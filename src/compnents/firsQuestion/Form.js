@@ -3,21 +3,34 @@ import "./Form.css";
 import logo from "../../assets/firstQlogo.svg";
 import yellowLine from "../../assets/firstline.svg";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import { useHistory } from "react-router-dom";
 
 function Form() {
   const [name, setName] = useState("");
   const [lastName, setlastName] = useState("");
   const [email, setEmail] = useState("");
-  const [validetaName, setValidetaName] = useState(true);
-
+  const [hideChevron, setSHideChevron] = useState(true);
+  let history = useHistory();
   useEffect(() => {
-    if (name.length < 3) {
+    if (
+      name.length >= 3 &&
+      /[^a-zA-Zა-ჰ]/.test(name) === false &&
+      lastName.length >= 3 &&
+      name.length < 255 &&
+      /[^a-zA-Zა-ჰ]/.test(lastName) === false &&
+      email.length > 3 &&
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) === true &&
+      email.includes("redberry.ge") === true
+    ) {
+      setSHideChevron(false);
+    } else {
+      setSHideChevron(true);
     }
-  }, [name]);
+  }, [name, lastName, email]);
   return (
     <>
       <div className="test">
-        <form>
+        <form type="submit">
           <div>
             {" "}
             <label for="first__name">სახელი*</label>{" "}
@@ -53,6 +66,7 @@ function Form() {
             {" "}
             <label for="last__name">გვარი*</label>{" "}
             <input
+              required="true"
               onChange={(e) => setlastName(e.target.value)}
               value={lastName}
               placeholder="შეიყვანეთ გვარი"
@@ -84,6 +98,7 @@ function Form() {
             {" "}
             <label for="email">მეილი*</label>{" "}
             <input
+              required="true"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
               placeholder="შეიყვანეთ მეილი"
@@ -93,12 +108,29 @@ function Form() {
             />
             <p
               className={`warning ${
-                /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+                email.length < 3
+                  ? "hidden"
+                  : /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+                  ? "hidden"
+                  : ""
+                // /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+                //   ? ""
+                //   : "hidden"
+              }`}
+            >
+              თქვენ მიერ შეყვანილი მეილი არასწორია
+            </p>
+            <p
+              className={`warning ${
+                email.length < 3
+                  ? "hidden"
+                  : email.includes("redberry.ge") &&
+                    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
                   ? "hidden"
                   : ""
               }`}
             >
-              თქვენ მიერ შეყვანილი მეილი არასწორია
+              გთხოვთ დარეგისტრირდეთ Redberry-ს მეილით (youremail@redberry.ge)
             </p>
           </div>
 
@@ -106,11 +138,16 @@ function Form() {
             {" "}
             *-ით მონიშნული ველების შევსება <br /> სავალდებულოა{" "}
           </p>
+          <button
+            disabled={hideChevron}
+            onClick={() => history.push("/secondquestion")}
+          >
+            <ArrowForwardIosIcon />
+          </button>
         </form>
         <img className="first__logo" src={logo} />
         <img className="yellow__line" src={yellowLine} />
       </div>
-      <ArrowForwardIosIcon />
     </>
   );
 }
