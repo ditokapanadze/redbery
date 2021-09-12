@@ -1,0 +1,13 @@
+header {
+  background-color: burlywood;
+
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid black;
+  padding-bottom: 10px;
+}
+header p {
+  font-size: 25px;
+}
