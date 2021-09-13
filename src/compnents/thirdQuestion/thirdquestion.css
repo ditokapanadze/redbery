@@ -1,0 +1,26 @@
+.register {
+  text-align: left;
+  margin-left: 70px;
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.registe p {
+  background-color: seashell;
+}
+a {
+  color: rgb(68, 128, 196);
+
+  text-align: left !important;
+}
+
+.doctor__img {
+  z-index: 1000;
+  position: relative;
+}
+
+.star__img {
+  position: absolute;
+  right: 560px;
+  top: 100px;
+}

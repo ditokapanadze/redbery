@@ -109,13 +109,15 @@ section {
   display: block;
 }
 body {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
+  /* width: 100vw;
+  height: 100vh; */
+  /* display: flex;
   align-items: center;
-  justify-content: center;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  justify-content: center; */
+  /* overflow-y: hidden;
+  overflow-x: hidden; */
+  padding: 50px 100px;
+  background-color: #eaeaea;
 }
 ol,
 ul {
@@ -143,4 +145,6 @@ code {
 
 input {
   outline: none;
+  background-color: #eaeaea;
+  border: 1px solid black;
 }

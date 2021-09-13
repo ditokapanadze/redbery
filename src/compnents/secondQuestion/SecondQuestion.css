@@ -19,7 +19,7 @@
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 20px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -108,4 +108,53 @@
 
 label p {
   margin-left: 20px;
+}
+
+.react-date-picker__wrapper {
+  height: 40px;
+  width: 540px;
+}
+
+.react-date-picker {
+  display: block !important;
+}
+
+.antigen__input {
+  background-color: #eaeaea;
+  border: 1px solid black;
+  margin-top: 30px;
+}
+.second__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.second__logo {
+  width: 800px;
+  position: relative;
+  z-index: 1000;
+}
+
+.second__line {
+  width: 200px;
+  position: absolute;
+  top: 330px;
+  right: 630px;
+}
+
+.MuiSvgIcon-root {
+  font-size: 40px !important;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.2s !important;
+}
+
+.MuiSvgIcon-root:hover {
+  transform: scale(1.2);
+}
+
+.chevron__button {
+  border-style: none;
+  background-color: #eaeaea;
 }

@@ -38,10 +38,9 @@
 }
 
 .App {
-  width: 90vw;
-  height: 90vh;
-  padding: 95px 165px;
-  background-color: #eaeaea;
+  /* width: 90vw;
+  height: 90vh; */
+  /* padding: 95px 165px; */
 }
 
 .question__title {
@@ -49,5 +48,5 @@
   margin-bottom: 30px;
   text-align: left;
   margin-top: 50px;
-  font-size: 25px;
+  font-size: 22px;
 }
