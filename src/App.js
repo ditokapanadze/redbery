@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import FirstQuestion from "./screens/FirstQuestionScreen";
 import SecondQuestionScreen from "./screens/SecondQuestionScreen";
 import ThirdQuestion from "./compnents/thirdQuestion/ThirdQuestion";
+import FourthQuestion from "./compnents/fourthQuestion/FourthQuestion";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/thirdQuestion">
             <ThirdQuestion />{" "}
+          </Route>
+          <Route path="/fourthQuestion">
+            <FourthQuestion />{" "}
           </Route>
           <Route path="/">
             <WelcomeScreen />

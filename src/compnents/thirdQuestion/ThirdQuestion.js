@@ -3,11 +3,13 @@ import Header from "../Header";
 import doctor from "../../assets/doctor2.svg";
 import star from "../../assets/star.svg";
 import "./thirdquestion.css";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import { useHistory } from "react-router-dom";
 function ThirdQuestion() {
   const [vacinated, setVacinated] = useState("");
   const [showLink, setShowLink] = useState("");
-  const [showReg, setShowReg] = useState(false);
-
+  let history = useHistory();
   return (
     <>
       <Header />
@@ -142,6 +144,17 @@ function ThirdQuestion() {
         <img className="doctor__img" src={doctor} />
         <img className="star__img" src={star} />
       </div>
+      <button className="chevron__button">
+        <ChevronLeftIcon onClick={() => history.push("/firstquestion")} />
+      </button>
+
+      <button
+        className="chevron__button"
+        // disabled={true}
+        onClick={() => history.push("/fourthQuestion")}
+      >
+        <ChevronRightIcon />
+      </button>
     </>
   );
 }

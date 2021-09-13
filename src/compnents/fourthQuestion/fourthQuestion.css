@@ -1,0 +1,39 @@
+.submit__button {
+  width: 180px;
+  height: 56px;
+  background: #208298;
+  border-radius: 42px;
+  color: aliceblue;
+  outline: none;
+  border-style: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+.second__content {
+  align-items: flex-start;
+  margin-top: 0;
+}
+
+.main_content {
+  height: 90vh;
+  overflow-y: scroll;
+}
+
+.main_content::-webkit-scrollbar {
+  display: none;
+}
+
+.bike__img {
+  margin-right: 50px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 1000;
+}
+.hurt__img {
+  position: absolute;
+  top: 200px;
+  right: 560px;
+}
+.main__text {
+  padding-top: 50px;
+}

@@ -50,3 +50,10 @@
   margin-top: 50px;
   font-size: 22px;
 }
+
+.main_content {
+  width: 50%;
+  padding-right: 200px;
+  font-size: 22px;
+  text-align: left;
+}
