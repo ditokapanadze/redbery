@@ -268,12 +268,12 @@ function ThirdQuestion() {
         <img className="doctor__img" src={doctor} />
         <img className="star__img" src={star} />
       </div>
-      <button className="chevron__button">
+      <button className="chevron__button third__chevron__button">
         <ChevronLeftIcon onClick={() => history.push("/secondquestion")} />
       </button>
 
       <button
-        className="chevron__button"
+        className="chevron__button third__chevron__button"
         // disabled={true}
         onClick={() => history.push("/fourthQuestion")}
       >

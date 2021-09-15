@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Header from "../Header";
 import "./SecondQuestion.css";
 import DatePicker from "react-date-picker";
-import SecondLogo from "../../assets/secondlogo.svg";
+import SecondLogo from "../../assets/vaccinate2.png";
 import SecondLine from "../../assets/secondline.svg";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -230,12 +230,12 @@ function SecondQuestion() {
         <img className="second__logo" src={SecondLogo} />
         <img className="second__line" src={SecondLine} />
       </div>
-      <button className="chevron__button">
+      <button className="chevron__button second__chevron__button">
         <ChevronLeftIcon onClick={() => history.push("/firstquestion")} />
       </button>
 
       <button
-        className="chevron__button"
+        className="chevron__button second__chevron__button"
         // disabled={true}
         onClick={() => history.push("/thirdQuestion")}
       >

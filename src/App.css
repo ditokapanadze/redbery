@@ -74,3 +74,8 @@
   opacity: 0;
   animation: 1s animation forwards;
 }
+
+.chevron__button {
+  border-style: none;
+  background-color: #eaeaea;
+}

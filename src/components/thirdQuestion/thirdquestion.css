@@ -15,12 +15,17 @@ a {
 }
 
 .doctor__img {
+  height: 870px;
   z-index: 1000;
   position: relative;
 }
 
 .star__img {
   position: absolute;
-  right: 560px;
+  right: 650px;
   top: 100px;
+}
+
+.third__chevron__button {
+  margin-top: 0 !important;
 }

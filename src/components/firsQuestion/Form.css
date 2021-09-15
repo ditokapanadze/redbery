@@ -84,21 +84,27 @@ form input {
 .yellow__line {
   position: absolute;
   top: 250px;
-  right: 200px;
+  right: 300px;
 }
 
 .first__logo {
+  margin-right: 100px;
   position: relative;
   z-index: 1000;
 }
 
-.chevron__button {
+/* .chevron__button {
   border-style: none;
   background-color: #eaeaea;
-}
+  margin-top: 150px !important;
+} */
+/* .first__button {
+  background-color: red;
+  margin-top: 150px;
+} */
 
 .first__button {
-  margin-top: 100px;
+  margin-top: 190px !important;
 }
 
 .first__content {

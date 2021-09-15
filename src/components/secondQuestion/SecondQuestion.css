@@ -131,7 +131,9 @@ label p {
 }
 
 .second__logo {
-  width: 800px;
+  /* width: 1200px; */
+  margin-right: 110px;
+  height: 850px;
   position: relative;
   z-index: 1000;
 }
@@ -139,8 +141,8 @@ label p {
 .second__line {
   width: 200px;
   position: absolute;
-  top: 280px;
-  right: 630px;
+  top: 350px;
+  right: 850px;
 }
 
 .MuiSvgIcon-root {
@@ -154,7 +156,6 @@ label p {
   transform: scale(1.2);
 }
 
-.chevron__button {
-  border-style: none;
-  background-color: #eaeaea;
+.second__chevron__button {
+  margin-top: 5px !important;
 }
