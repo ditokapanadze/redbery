@@ -115,8 +115,9 @@ body {
   align-items: center;
   justify-content: center; */
   /* /* overflow-y: hidden; */
-  overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-x: hidden;
+  overflow-y: hidden; */
+
   padding: 50px 100px;
   background-color: #eaeaea;
 }

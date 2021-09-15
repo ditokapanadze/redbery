@@ -1,0 +1,79 @@
+.submit__button {
+  width: 180px;
+  height: 56px;
+  font-size: 100px;
+  background: #208298;
+  border-radius: 42px;
+  color: aliceblue;
+  outline: none;
+  cursor: pointer;
+  border-style: none;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 465px;
+  margin-top: 50px;
+
+  position: relative;
+}
+.main__content {
+  overflow: hidden !important;
+}
+.content {
+  align-items: flex-start;
+  margin-top: 0;
+}
+::-webkit-resizer {
+  display: none;
+}
+textarea {
+  resize: none;
+  width: 625px;
+  outline: none;
+  padding: 10px;
+  height: 185px;
+  background-color: #eaeaea;
+  border: 0.8px solid #232323;
+}
+.fourth__content {
+  height: 85vh;
+  overflow-y: hidden;
+
+  padding-bottom: 50px;
+  /* animation: 2s animation forwards; */
+}
+
+/* @keyframes animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */
+.main_content::-webkit-scrollbar {
+  display: none;
+}
+
+.bike__img {
+  margin-right: 50px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 1000;
+}
+.hurt__img {
+  position: absolute;
+  top: 200px;
+  right: 560px;
+}
+.main__text {
+  padding-top: 50px;
+}
+
+.fourth__chevron {
+  /* margin-top: 50px;
+  position: absolute;
+  bottom: 30px;
+  left: 45vw; */
+  margin-left: 700px;
+  margin-top: 50px;
+}

@@ -124,7 +124,7 @@ label p {
   border: 1px solid black;
   margin-top: 30px;
 }
-.second__content {
+.content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -139,7 +139,7 @@ label p {
 .second__line {
   width: 200px;
   position: absolute;
-  top: 330px;
+  top: 280px;
   right: 630px;
 }
 

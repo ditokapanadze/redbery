@@ -57,3 +57,20 @@
   font-size: 22px;
   text-align: left;
 }
+.content {
+  opacity: 1;
+  animation: 1s animation forwards;
+}
+
+@keyframes animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.MuiSvgIcon-root {
+  opacity: 0;
+  animation: 1s animation forwards;
+}

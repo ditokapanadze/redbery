@@ -5,18 +5,6 @@ form {
   position: relative;
 }
 
-/* form button {
-  height: 40px;
-  outline: none;
-  border-style: none;
-  background-color: #eaeaea;
-  cursor: pointer;
-
-  position: relative;
-  left: 650px;
-
-  top: 90px;
-} */
 form label {
   font-weight: bold;
   font-size: 20px;
@@ -60,27 +48,6 @@ form input {
   justify-content: space-between;
 }
 
-/* .first__logo {
-  position: absolute;
-  right: -70px;
-  width: 800px;
-  top: -50px;
-  z-index: 1000;
-}
-
-.yellow__line {
-  position: absolute;
-  top: 300px;
-  width: 300px;
-  left: 600px;
-  animation: line 0.5s forwards;
-  opacity: 0;
-} */
-/* .MuiSvgIcon-root {
-  margin-top: 30px;
-  cursor: pointer;
-} */
-
 @keyframes line {
   from {
     width: 300px;
@@ -106,7 +73,7 @@ form input {
   display: none;
 }
 
-.second__content {
+.content {
   margin-top: 50px;
 
   display: flex;
@@ -132,4 +99,9 @@ form input {
 
 .first__button {
   margin-top: 100px;
+}
+
+.first__content {
+  overflow: hidden;
+  padding-top: 50px;
 }

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Form.css";
 import logo from "../../assets/firstlogo.png";
 import yellowLine from "../../assets/firstline.svg";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { useHistory } from "react-router-dom";
+import { Context } from "../../Context";
 
 function Form() {
   const [name, setName] = useState("");
@@ -11,6 +12,10 @@ function Form() {
   const [email, setEmail] = useState("");
   const [hideChevron, setSHideChevron] = useState(true);
   let history = useHistory();
+  const { firstPage } = useContext(Context);
+  const [answers, setAnswers] = firstPage;
+
+  console.log(answers);
   useEffect(() => {
     if (
       name.length >= 3 &&
@@ -27,9 +32,20 @@ function Form() {
       setSHideChevron(true);
     }
   }, [name, lastName, email]);
+
+  const handleClick = () => {
+    setAnswers({
+      ...answers,
+      name,
+      lastName,
+      email,
+    });
+    history.push("/secondquestion");
+  };
+
   return (
     <>
-      <div className="second__content">
+      <div className="content first__content">
         <div className="main_content">
           <form type="submit">
             <div>
@@ -151,7 +167,7 @@ function Form() {
       <button
         className="chevron__button first__button"
         disabled={hideChevron}
-        onClick={() => history.push("/secondquestion")}
+        onClick={handleClick}
       >
         <ChevronRightIcon />
       </button>

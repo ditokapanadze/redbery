@@ -1,11 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
-import WelcomeScreen from "./screens/WelcomeScreen";
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import FirstQuestion from "./screens/FirstQuestionScreen";
-import SecondQuestionScreen from "./screens/SecondQuestionScreen";
-import ThirdQuestion from "./compnents/thirdQuestion/ThirdQuestion";
-import FourthQuestion from "./compnents/fourthQuestion/FourthQuestion";
+import FirstQuestion from "./components/firsQuestion/FirstQuetion";
+
+import ThirdQuestion from "./components/thirdQuestion/ThirdQuestion";
+import FourthQuestion from "./components/fourthQuestion/FourthQuestion";
+import Welcome from "./components/Welcome";
+import SecondQuestion from "./components/secondQuestion/SecondQuestion";
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
             <FirstQuestion />
           </Route>
           <Route path="/secondquestion">
-            <SecondQuestionScreen />{" "}
+            <SecondQuestion />{" "}
           </Route>
           <Route path="/thirdQuestion">
             <ThirdQuestion />{" "}
@@ -25,7 +27,7 @@ function App() {
             <FourthQuestion />{" "}
           </Route>
           <Route path="/">
-            <WelcomeScreen />
+            <Welcome />
           </Route>
         </Switch>
       </div>
