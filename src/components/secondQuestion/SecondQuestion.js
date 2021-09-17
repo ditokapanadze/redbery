@@ -9,8 +9,6 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { useHistory } from "react-router-dom";
 import { Context } from "../../Context";
 function SecondQuestion() {
-  const [covidPositive, setCovidPositive] = useState(false);
-  const [showAntigen, setShowAntigen] = useState("");
   const [antigenValue, setAntigenValue] = useState("");
   const [disableButton, setDisableButton] = useState(true);
   const { secondPage } = useContext(Context);
@@ -19,7 +17,6 @@ function SecondQuestion() {
   let history = useHistory();
 
   const handlePositive = (e) => {
-    setCovidPositive(true);
     setSecondQuestion({
       ...secondQuestion,
       covid_status: e.target.value,
@@ -30,7 +27,6 @@ function SecondQuestion() {
   };
 
   const handleNegative = (e) => {
-    setCovidPositive(false);
     console.log(e.target.value);
     setSecondQuestion({
       ...secondQuestion,
@@ -49,7 +45,7 @@ function SecondQuestion() {
   };
   const handleNow = (e) => {
     console.log(e.target.value);
-    setCovidPositive(false);
+
     setSecondQuestion({
       ...secondQuestion,
       covid_status: e.target.value,
@@ -262,8 +258,8 @@ function SecondQuestion() {
             </>
           )}
         </div>
-        <img className="second__logo" src={SecondLogo} />
-        <img className="second__line" src={SecondLine} />
+        <img className="second__logo" src={SecondLogo} alt="temperature__img" />
+        <img className="second__line" src={SecondLine} alt="temperature__img" />
       </div>
       <button className="chevron__button second__chevron__button">
         <ChevronLeftIcon onClick={() => history.push("/firstquestion")} />

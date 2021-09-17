@@ -52,7 +52,7 @@ function Form() {
               {" "}
               <label for="first__name">სახელი*</label>{" "}
               <input
-                required="true"
+                required={true}
                 value={name}
                 placeholder="შეიყვანეთ სახელი"
                 type="text"
@@ -83,7 +83,7 @@ function Form() {
               {" "}
               <label for="last__name">გვარი*</label>{" "}
               <input
-                required="true"
+                required={true}
                 onChange={(e) => setlastName(e.target.value)}
                 value={lastName}
                 placeholder="შეიყვანეთ გვარი"
@@ -115,7 +115,7 @@ function Form() {
               {" "}
               <label for="email">მეილი*</label>{" "}
               <input
-                required="true"
+                required={true}
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 placeholder="შეიყვანეთ მეილი"
@@ -161,8 +161,8 @@ function Form() {
             </p>
           </form>
         </div>
-        <img className="first__logo" src={logo} />
-        <img className="yellow__line" src={yellowLine} />
+        <img className="first__logo" src={logo} alt="person logo" />
+        <img className="yellow__line" src={yellowLine} alt="person logo" />
       </div>
       <button
         className="chevron__button first__button"

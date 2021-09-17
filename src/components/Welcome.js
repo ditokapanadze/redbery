@@ -7,7 +7,7 @@ function Welcome() {
   let history = useHistory();
   return (
     <div>
-      <img className="logo" src={Logo} />
+      <img className="logo" src={Logo} alt="logo" />
       <p
         onClick={() => history.push("/firstquestion")}
         className="welcome__text"

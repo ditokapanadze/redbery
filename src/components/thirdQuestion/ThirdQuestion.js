@@ -9,7 +9,6 @@ import { useHistory } from "react-router-dom";
 import { Context } from "../../Context";
 
 function ThirdQuestion() {
-  const [vacinated, setVacinated] = useState("");
   const [showLink, setShowLink] = useState("");
   const { thirdPage } = useContext(Context);
   const [thirdQuestion, setThirdQuestion] = thirdPage;
@@ -278,8 +277,8 @@ function ThirdQuestion() {
             </>
           )}
         </div>
-        <img className="doctor__img" src={doctor} />
-        <img className="star__img" src={star} />
+        <img className="doctor__img" src={doctor} alt="doctor" />
+        <img className="star__img" src={star} alt="doctor" />
       </div>
       <button className="chevron__button third__chevron__button">
         <ChevronLeftIcon onClick={() => history.push("/secondquestion")} />

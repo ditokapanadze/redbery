@@ -4,7 +4,7 @@ import "./Header.css";
 function Header({ page }) {
   return (
     <header>
-      <img src={RedLogo} />
+      <img src={RedLogo} alt="redberry logo" />
       <p>{page}/4</p>
     </header>
   );
