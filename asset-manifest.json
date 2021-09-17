@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/redbery/static/css/main.6879e7f6.chunk.css",
-    "main.js": "/redbery/static/js/main.eeb8df5a.chunk.js",
-    "main.js.map": "/redbery/static/js/main.eeb8df5a.chunk.js.map",
+    "main.js": "/redbery/static/js/main.39a5ac93.chunk.js",
+    "main.js.map": "/redbery/static/js/main.39a5ac93.chunk.js.map",
     "runtime-main.js": "/redbery/static/js/runtime-main.02d5216e.js",
     "runtime-main.js.map": "/redbery/static/js/runtime-main.02d5216e.js.map",
     "static/css/2.9c6b934b.chunk.css": "/redbery/static/css/2.9c6b934b.chunk.css",
@@ -31,6 +31,6 @@
     "static/css/2.9c6b934b.chunk.css",
     "static/js/2.9baceda6.chunk.js",
     "static/css/main.6879e7f6.chunk.css",
-    "static/js/main.eeb8df5a.chunk.js"
+    "static/js/main.39a5ac93.chunk.js"
   ]
 }
