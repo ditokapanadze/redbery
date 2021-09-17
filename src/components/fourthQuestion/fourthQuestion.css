@@ -63,7 +63,24 @@ textarea {
 .hurt__img {
   position: absolute;
   top: 200px;
+  width: 200px;
   right: 560px;
+}
+.hurt__animation {
+  animation: 0.4s hurt;
+}
+
+@keyframes hurt {
+  from {
+    top: 200px;
+    width: 200px;
+    right: 560px;
+  }
+  to {
+    top: 10px;
+    width: 2000px;
+    right: 60px;
+  }
 }
 .main__text {
   padding-top: 50px;
@@ -76,4 +93,10 @@ textarea {
   left: 45vw; */
   margin-left: 750px;
   margin-top: 50px;
+}
+
+.finish__screen {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
 }

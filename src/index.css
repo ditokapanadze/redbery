@@ -109,16 +109,7 @@ section {
   display: block;
 }
 body {
-  /* width: 100vw;
-  height: 100vh; */
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  /* /* overflow-y: hidden; */
-  /* overflow-x: hidden;
-  overflow-y: hidden; */
-
-  padding: 50px 100px;
+  /* padding: 50px 100px; */
   background-color: #eaeaea;
 }
 ol,

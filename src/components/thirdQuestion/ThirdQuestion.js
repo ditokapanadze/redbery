@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Header from "../Header";
 import doctor from "../../assets/doctor2.svg";
 import star from "../../assets/star.svg";
@@ -13,6 +13,7 @@ function ThirdQuestion() {
   const [showLink, setShowLink] = useState("");
   const { thirdPage } = useContext(Context);
   const [thirdQuestion, setThirdQuestion] = thirdPage;
+  const [disableButton, setDisableButton] = useState(true);
 
   let history = useHistory();
 
@@ -107,9 +108,21 @@ function ThirdQuestion() {
     }
   };
 
+  useEffect(() => {
+    if (
+      thirdQuestion.vacinated.length > 1 &&
+      (thirdQuestion.wating_for.length > 1 ||
+        thirdQuestion.vacinated_status.length > 1)
+    ) {
+      setDisableButton(false);
+    } else {
+      setDisableButton(true);
+    }
+  }, [thirdQuestion]);
+
   return (
     <>
-      <Header />
+      <Header page={"3"} />
       <div className="content">
         <div className="main_content">
           <p className="question__title">უკვე აცრილი ხარ?*</p>
@@ -273,6 +286,7 @@ function ThirdQuestion() {
       </button>
 
       <button
+        disabled={disableButton}
         className="chevron__button third__chevron__button"
         // disabled={true}
         onClick={() => history.push("/fourthQuestion")}

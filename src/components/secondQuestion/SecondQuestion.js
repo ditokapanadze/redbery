@@ -12,7 +12,7 @@ function SecondQuestion() {
   const [covidPositive, setCovidPositive] = useState(false);
   const [showAntigen, setShowAntigen] = useState("");
   const [antigenValue, setAntigenValue] = useState("");
-
+  const [disableButton, setDisableButton] = useState(true);
   const { secondPage } = useContext(Context);
   const [secondQuestion, setSecondQuestion] = secondPage;
 
@@ -31,11 +31,13 @@ function SecondQuestion() {
 
   const handleNegative = (e) => {
     setCovidPositive(false);
+    console.log(e.target.value);
     setSecondQuestion({
       ...secondQuestion,
       covid_status: e.target.value,
       negative_checked: true,
-      covid_status: "",
+      now_checked: false,
+
       antigen_test: "",
       positive_checked: false,
       antigen_status: "",
@@ -46,12 +48,13 @@ function SecondQuestion() {
     });
   };
   const handleNow = (e) => {
+    console.log(e.target.value);
     setCovidPositive(false);
     setSecondQuestion({
       ...secondQuestion,
       covid_status: e.target.value,
       now_checked: true,
-      covid_status: "",
+
       antigen_test: "",
       positive_checked: false,
       negative_checked: false,
@@ -108,10 +111,42 @@ function SecondQuestion() {
       covid_date: e,
     });
   };
+
   console.log(secondQuestion);
+  useEffect(() => {
+    if (
+      secondQuestion.covid_status === "კი" &&
+      secondQuestion.antigen_status === "კი" &&
+      secondQuestion.antigen_date !== "" &&
+      secondQuestion.antigen_date !== null &&
+      secondQuestion.antigen_value.length > 1
+    ) {
+      console.log("egaa");
+      setDisableButton(false);
+    } else {
+      setDisableButton(true);
+    }
+
+    if (
+      secondQuestion.covid_status === "კი" &&
+      secondQuestion.antigen_status === "არა" &&
+      secondQuestion.covid_date !== "" &&
+      secondQuestion.covid_date !== null
+    ) {
+      setDisableButton(false);
+    }
+
+    if (
+      secondQuestion.covid_status === "არა" ||
+      secondQuestion.covid_status === "ახლა მაქვს"
+    ) {
+      setDisableButton(false);
+    }
+  }, [secondQuestion]);
+
   return (
     <>
-      <Header />
+      <Header page={"2"} />
       <div className="content">
         <div className="main_content">
           <p className="question__title">გაქვს გადატანილი covid-19?*</p>
@@ -235,6 +270,7 @@ function SecondQuestion() {
       </button>
 
       <button
+        disabled={disableButton}
         className="chevron__button second__chevron__button"
         // disabled={true}
         onClick={() => history.push("/thirdQuestion")}

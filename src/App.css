@@ -38,6 +38,8 @@
 }
 
 .App {
+  margin: 50px 100px;
+
   /* width: 90vw;
   height: 90vh; */
   /* padding: 95px 165px; */
@@ -78,4 +80,8 @@
 .chevron__button {
   border-style: none;
   background-color: #eaeaea;
+}
+
+button:disabled {
+  opacity: 0.5;
 }

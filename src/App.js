@@ -8,6 +8,7 @@ import ThirdQuestion from "./components/thirdQuestion/ThirdQuestion";
 import FourthQuestion from "./components/fourthQuestion/FourthQuestion";
 import Welcome from "./components/Welcome";
 import SecondQuestion from "./components/secondQuestion/SecondQuestion";
+import Finish from "./components/finish/Finish";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path="/fourthQuestion">
             <FourthQuestion />{" "}
+          </Route>
+          <Route path="/finish">
+            <Finish />{" "}
           </Route>
           <Route path="/">
             <Welcome />

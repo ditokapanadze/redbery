@@ -1,0 +1,27 @@
+.finnish__screen {
+  color: white;
+  position: absolute;
+  width: 100vw;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+.small__star {
+  position: absolute;
+  top: 600px;
+  right: 850px;
+}
+
+.big__star {
+  top: 400px;
+  right: 1000px;
+  position: absolute;
+}

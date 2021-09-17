@@ -1,6 +1,6 @@
 .logo {
-  width: inherit;
-  height: inherit;
+  height: 1080px;
+  width: 1080px;
   animation: shrink 0.5s forwards;
 }
 

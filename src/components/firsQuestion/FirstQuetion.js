@@ -6,7 +6,7 @@ import "./firstQuestion.css";
 function FirstQuetion() {
   return (
     <>
-      <Header />
+      <Header page={"1"} />
       <Form />
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Header from "../Header";
 import "./fourthQuestion.css";
 import bike from "../../assets/bike.svg";
@@ -11,14 +11,20 @@ function FourthQuestion() {
   const { fourthPage } = useContext(Context);
   const [fourthQuestion, setFourthQuestion] = fourthPage;
   const [spaceOpinion, setSpaceOpinion] = useState("");
+  const [disableButton, setDisableButton] = useState(true);
+  const [animation, setAnimation] = useState(false);
+  const [finishScreen, setFinishScreen] = useState(false);
+
   let history = useHistory();
 
   window.addEventListener("wheel", (e) => {
-    const scrollElement = document.querySelector(".main_content");
-    if (e.deltaY < 0) {
-      scrollElement.scrollBy(0, -30);
-    } else if (e.deltaY > 0) {
-      scrollElement.scrollBy(0, 30);
+    if (!finishScreen) {
+      const scrollElement = document.querySelector(".main_content");
+      if (e.deltaY < 0) {
+        scrollElement?.scrollBy(0, -30);
+      } else if (e.deltaY > 0) {
+        scrollElement?.scrollBy(0, 30);
+      }
     }
   });
 
@@ -60,6 +66,8 @@ function FourthQuestion() {
     }
   };
 
+  console.log(finishScreen);
+
   const officeWork = (e) => {
     setFourthQuestion({
       ...fourthQuestion,
@@ -84,163 +92,200 @@ function FourthQuestion() {
   };
 
   console.log(fourthQuestion);
+
+  useEffect(() => {
+    if (
+      fourthQuestion.meetings.length > 1 &&
+      fourthQuestion.officeWork.length > 0
+    ) {
+      console.log("test");
+      setDisableButton(false);
+    } else {
+      setDisableButton(true);
+    }
+  }, [fourthQuestion]);
+
+  const finish = () => {
+    setAnimation(true);
+    setTimeout(() => {
+      history.push("/finish");
+    }, 400);
+  };
+
   return (
     <>
-      <Header />
-      <div className="content">
-        <div className="main_content fourth__content">
-          <p className="main__text">
-            რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო,
-            რომელსაც ჩვენი თანამშრომლები ქმნით, ბევრისთვის არის და ყოფილა წლების
-            განმავლობაში მიზნებისთვის ერთად ბრძოლის მიზეზი, ბევრისთვის კი —
-            ჩვენთან გადმოსვლის.{" "}
-          </p>{" "}
-          <p>
-            {" "}
-            პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ პირისპირ და
-            ყოველდღიური კომუნიკაციაც გაიშვიათდა.
-          </p>
-          <p className="question__title">
-            რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები,
-            სადაც ყველა სურვილისამებრ ჩაერთვება?*
-          </p>
-          <label className="container">
-            <p> კვირაში ორჯერ </p>
-            <input
-              checked={fourthQuestion.firstOption_checked}
-              value="კვირაში ორჯერ"
-              type="radio"
-              name="radio"
-              onChange={(e) => meetingFrequency(e)}
-            />
-            <span className="checkmark"></span>
-          </label>
-          <label className="container">
-            <p> კვირაში ერთხელ </p>
-            <input
-              value="კვირაში ერთხელ"
-              checked={fourthQuestion.secondOption_checked}
-              type="radio"
-              name="radio"
-              onChange={(e) => meetingFrequency(e)}
-            />
-            <span className="checkmark"></span>
-          </label>
-          <label className="container">
-            <p> ორ კვირაში ერთხელ </p>
-            <input
-              value="ორ კვირაში ერთხელ"
-              checked={fourthQuestion.thirdOption_checked}
-              type="radio"
-              name="radio"
-              onChange={(e) => meetingFrequency(e)}
-            />
-            <span className="checkmark"></span>
-          </label>
-          <label className="container">
-            <p> თვეში ერთხელ </p>
-            <input
-              value="თვეში ერთხელ"
-              checked={fourthQuestion.fourthOption_checked}
-              type="radio"
-              name="radio"
-              onChange={(e) => meetingFrequency(e)}
-            />
-            <span className="checkmark"></span>
-          </label>
-          <p className="question__title">
-            კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*
-          </p>
-          <label className="container">
-            <p> 0 </p>
-            <input
-              value="0"
-              checked={fourthQuestion.officeWork === "0" ? true : false}
-              type="radio"
-              name="radio2"
-              onChange={(e) => officeWork(e)}
-            />
-            <span className="checkmark"></span>
-          </label>
-          <label className="container">
-            <p> 1 </p>
-            <input
-              value="1"
-              checked={fourthQuestion.officeWork === "1" ? true : false}
-              type="radio"
-              name="radio2"
-              onChange={(e) => officeWork(e)}
-            />
-            <span className="checkmark"></span>
-          </label>
-          <label className="container">
-            <p> 2 </p>
-            <input
-              value="2"
-              checked={fourthQuestion.officeWork === "2" ? true : false}
-              type="radio"
-              name="radio2"
-              onChange={(e) => officeWork(e)}
-            />
-            <span className="checkmark"></span>
-          </label>
-          <label className="container">
-            <p> 3 </p>
-            <input
-              value="3"
-              checked={fourthQuestion.officeWork === "3" ? true : false}
-              type="radio"
-              name="radio2"
-              onChange={(e) => officeWork(e)}
-            />
-            <span className="checkmark"></span>
-          </label>
-          <label className="container">
-            <p> 4 </p>
-            <input
-              value="4"
-              checked={fourthQuestion.officeWork === "4" ? true : false}
-              type="radio"
-              name="radio2"
-              onChange={(e) => officeWork(e)}
-            />
-            <span className="checkmark"></span>
-          </label>
-          <label className="container">
-            <p>5</p>
-            <input
-              value="5"
-              checked={fourthQuestion.officeWork === "5" ? true : false}
-              type="radio"
-              name="radio2"
-              onChange={(e) => officeWork(e)}
-            />
-            <span className="checkmark"></span>
-          </label>
-          <p className="question__title">რას ფიქრობ ფიზიკურ შეკრებებზე?</p>
-          <textarea
-            value={fourthQuestion.opinionAboutMeeting}
-            onChange={(e) => handleChange(e)}
-            name="meeting_opinion"
-          />
-          <p className="question__title">
-            რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას
-            შეცვლიდი?
-          </p>
-          <textarea
-            value={fourthQuestion.opinioAboutSpace}
-            onChange={(e) => handleChange(e)}
-            name="space_opinion"
-          />
-          <button className="submit__button">დასრულება</button>
-          <button className="chevron__button fourth__chevron">
-            <ChevronLeftIcon onClick={() => history.push("/thirdQuestion")} />
-          </button>
-        </div>
+      {finishScreen ? (
+        <div className="finish__screen">მადლობა</div>
+      ) : (
+        <>
+          <Header page={"4"} />
+          <div className="content">
+            <div className="main_content fourth__content">
+              <p className="main__text">
+                რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია.
+                გარემო, რომელსაც ჩვენი თანამშრომლები ქმნით, ბევრისთვის არის და
+                ყოფილა წლების განმავლობაში მიზნებისთვის ერთად ბრძოლის მიზეზი,
+                ბევრისთვის კი — ჩვენთან გადმოსვლის.{" "}
+              </p>{" "}
+              <p>
+                {" "}
+                პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ პირისპირ და
+                ყოველდღიური კომუნიკაციაც გაიშვიათდა.
+              </p>
+              <p className="question__title">
+                რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ
+                შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*
+              </p>
+              <label className="container">
+                <p> კვირაში ორჯერ </p>
+                <input
+                  checked={fourthQuestion.firstOption_checked}
+                  value="კვირაში ორჯერ"
+                  type="radio"
+                  name="radio"
+                  onChange={(e) => meetingFrequency(e)}
+                />
+                <span className="checkmark"></span>
+              </label>
+              <label className="container">
+                <p> კვირაში ერთხელ </p>
+                <input
+                  value="კვირაში ერთხელ"
+                  checked={fourthQuestion.secondOption_checked}
+                  type="radio"
+                  name="radio"
+                  onChange={(e) => meetingFrequency(e)}
+                />
+                <span className="checkmark"></span>
+              </label>
+              <label className="container">
+                <p> ორ კვირაში ერთხელ </p>
+                <input
+                  value="ორ კვირაში ერთხელ"
+                  checked={fourthQuestion.thirdOption_checked}
+                  type="radio"
+                  name="radio"
+                  onChange={(e) => meetingFrequency(e)}
+                />
+                <span className="checkmark"></span>
+              </label>
+              <label className="container">
+                <p> თვეში ერთხელ </p>
+                <input
+                  value="თვეში ერთხელ"
+                  checked={fourthQuestion.fourthOption_checked}
+                  type="radio"
+                  name="radio"
+                  onChange={(e) => meetingFrequency(e)}
+                />
+                <span className="checkmark"></span>
+              </label>
+              <p className="question__title">
+                კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*
+              </p>
+              <label className="container">
+                <p> 0 </p>
+                <input
+                  value="0"
+                  checked={fourthQuestion.officeWork === "0" ? true : false}
+                  type="radio"
+                  name="radio2"
+                  onChange={(e) => officeWork(e)}
+                />
+                <span className="checkmark"></span>
+              </label>
+              <label className="container">
+                <p> 1 </p>
+                <input
+                  value="1"
+                  checked={fourthQuestion.officeWork === "1" ? true : false}
+                  type="radio"
+                  name="radio2"
+                  onChange={(e) => officeWork(e)}
+                />
+                <span className="checkmark"></span>
+              </label>
+              <label className="container">
+                <p> 2 </p>
+                <input
+                  value="2"
+                  checked={fourthQuestion.officeWork === "2" ? true : false}
+                  type="radio"
+                  name="radio2"
+                  onChange={(e) => officeWork(e)}
+                />
+                <span className="checkmark"></span>
+              </label>
+              <label className="container">
+                <p> 3 </p>
+                <input
+                  value="3"
+                  checked={fourthQuestion.officeWork === "3" ? true : false}
+                  type="radio"
+                  name="radio2"
+                  onChange={(e) => officeWork(e)}
+                />
+                <span className="checkmark"></span>
+              </label>
+              <label className="container">
+                <p> 4 </p>
+                <input
+                  value="4"
+                  checked={fourthQuestion.officeWork === "4" ? true : false}
+                  type="radio"
+                  name="radio2"
+                  onChange={(e) => officeWork(e)}
+                />
+                <span className="checkmark"></span>
+              </label>
+              <label className="container">
+                <p>5</p>
+                <input
+                  value="5"
+                  checked={fourthQuestion.officeWork === "5" ? true : false}
+                  type="radio"
+                  name="radio2"
+                  onChange={(e) => officeWork(e)}
+                />
+                <span className="checkmark"></span>
+              </label>
+              <p className="question__title">რას ფიქრობ ფიზიკურ შეკრებებზე?</p>
+              <textarea
+                value={fourthQuestion.opinionAboutMeeting}
+                onChange={(e) => handleChange(e)}
+                name="meeting_opinion"
+              />
+              <p className="question__title">
+                რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას
+                შეცვლიდი?
+              </p>
+              <textarea
+                value={fourthQuestion.opinioAboutSpace}
+                onChange={(e) => handleChange(e)}
+                name="space_opinion"
+              />
+              <button
+                disabled={disableButton}
+                onClick={finish}
+                className="submit__button"
+              >
+                დასრულება
+              </button>
+              <button className="chevron__button fourth__chevron">
+                <ChevronLeftIcon
+                  onClick={() => history.push("/thirdQuestion")}
+                />
+              </button>
+            </div>
 
-        <img className="bike__img" src={bike} />
-        <img className="hurt__img" src={hurt} />
-      </div>
+            <img className="bike__img" src={bike} />
+            <img
+              className={`hurt__img ${animation ? "hurt__animation" : ""}`}
+              src={hurt}
+            />
+          </div>{" "}
+        </>
+      )}
     </>
   );
 }
