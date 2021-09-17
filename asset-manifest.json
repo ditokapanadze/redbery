@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/redbery/static/css/main.6879e7f6.chunk.css",
+    "main.js": "/redbery/static/js/main.eeb8df5a.chunk.js",
+    "main.js.map": "/redbery/static/js/main.eeb8df5a.chunk.js.map",
+    "runtime-main.js": "/redbery/static/js/runtime-main.02d5216e.js",
+    "runtime-main.js.map": "/redbery/static/js/runtime-main.02d5216e.js.map",
+    "static/css/2.9c6b934b.chunk.css": "/redbery/static/css/2.9c6b934b.chunk.css",
+    "static/js/2.9baceda6.chunk.js": "/redbery/static/js/2.9baceda6.chunk.js",
+    "static/js/2.9baceda6.chunk.js.map": "/redbery/static/js/2.9baceda6.chunk.js.map",
+    "static/js/3.9370a780.chunk.js": "/redbery/static/js/3.9370a780.chunk.js",
+    "static/js/3.9370a780.chunk.js.map": "/redbery/static/js/3.9370a780.chunk.js.map",
+    "index.html": "/redbery/index.html",
+    "static/css/2.9c6b934b.chunk.css.map": "/redbery/static/css/2.9c6b934b.chunk.css.map",
+    "static/css/main.6879e7f6.chunk.css.map": "/redbery/static/css/main.6879e7f6.chunk.css.map",
+    "static/js/2.9baceda6.chunk.js.LICENSE.txt": "/redbery/static/js/2.9baceda6.chunk.js.LICENSE.txt",
+    "static/media/bike.a38d5b72.svg": "/redbery/static/media/bike.a38d5b72.svg",
+    "static/media/doctor2.1413ff70.svg": "/redbery/static/media/doctor2.1413ff70.svg",
+    "static/media/firstline.09d59d1d.svg": "/redbery/static/media/firstline.09d59d1d.svg",
+    "static/media/firstlogo.c79c59a8.png": "/redbery/static/media/firstlogo.c79c59a8.png",
+    "static/media/hurt.e8a9fe90.svg": "/redbery/static/media/hurt.e8a9fe90.svg",
+    "static/media/logo.6ce24c58.svg": "/redbery/static/media/logo.6ce24c58.svg",
+    "static/media/logo.7bd193e0.svg": "/redbery/static/media/logo.7bd193e0.svg",
+    "static/media/redLogo.4c8ea153.svg": "/redbery/static/media/redLogo.4c8ea153.svg",
+    "static/media/secondline.e6685ea1.svg": "/redbery/static/media/secondline.e6685ea1.svg",
+    "static/media/star.171c21d5.svg": "/redbery/static/media/star.171c21d5.svg",
+    "static/media/vaccinate2.e03b0d62.png": "/redbery/static/media/vaccinate2.e03b0d62.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.02d5216e.js",
+    "static/css/2.9c6b934b.chunk.css",
+    "static/js/2.9baceda6.chunk.js",
+    "static/css/main.6879e7f6.chunk.css",
+    "static/js/main.eeb8df5a.chunk.js"
+  ]
+}
