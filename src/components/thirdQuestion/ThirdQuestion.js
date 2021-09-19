@@ -47,7 +47,6 @@ function ThirdQuestion() {
       }
     }
   };
-  console.log(thirdQuestion);
 
   const handleStatusChange = (e) => {
     if (e.target.value === "პირველი დოზა და დარეგისტრირებული ვარ მეორეზე") {
@@ -79,7 +78,6 @@ function ThirdQuestion() {
     }
   };
   const waitingStatus = (e) => {
-    console.log(e.target.value);
     if (e.target.value === "დარეგისტრირებული ვარ და ველოდები თარიღს") {
       setThirdQuestion({
         ...thirdQuestion,

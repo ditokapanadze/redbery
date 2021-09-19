@@ -27,7 +27,6 @@ function SecondQuestion() {
   };
 
   const handleNegative = (e) => {
-    console.log(e.target.value);
     setSecondQuestion({
       ...secondQuestion,
       covid_status: e.target.value,
@@ -44,8 +43,6 @@ function SecondQuestion() {
     });
   };
   const handleNow = (e) => {
-    console.log(e.target.value);
-
     setSecondQuestion({
       ...secondQuestion,
       covid_status: e.target.value,
@@ -94,7 +91,7 @@ function SecondQuestion() {
 
   const antigenDateChange = (e) => {
     // setDate(e);
-    console.log(e);
+
     setSecondQuestion({
       ...secondQuestion,
       antigen_date: e,
@@ -108,7 +105,6 @@ function SecondQuestion() {
     });
   };
 
-  console.log(secondQuestion);
   useEffect(() => {
     if (
       secondQuestion.covid_status === "კი" &&
@@ -117,7 +113,6 @@ function SecondQuestion() {
       secondQuestion.antigen_date !== null &&
       secondQuestion.antigen_value.length > 1
     ) {
-      console.log("egaa");
       setDisableButton(false);
     } else {
       setDisableButton(true);

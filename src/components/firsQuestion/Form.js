@@ -5,24 +5,30 @@ import yellowLine from "../../assets/firstline.svg";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { useHistory } from "react-router-dom";
 import { Context } from "../../Context";
+import { Edit } from "@material-ui/icons";
 
 function Form() {
-  const [name, setName] = useState("");
-  const [lastName, setlastName] = useState("");
-  const [email, setEmail] = useState("");
+  const { firstPage } = useContext(Context);
+  const [firstQuestion, setFirstQuestion] = firstPage;
+  const [name, setName] = useState(
+    firstQuestion.name.length > 1 ? firstQuestion.name : ""
+  );
+  const [last_name, setlastName] = useState(
+    firstQuestion.last_name.length > 1 ? firstQuestion.last_name : ""
+  );
+  const [email, setEmail] = useState(
+    firstQuestion.email.length > 1 ? firstQuestion.email : ""
+  );
   const [hideChevron, setSHideChevron] = useState(true);
   let history = useHistory();
-  const { firstPage } = useContext(Context);
-  const [answers, setAnswers] = firstPage;
 
-  console.log(answers);
   useEffect(() => {
     if (
       name.length >= 3 &&
       /[^a-zA-Zა-ჰ]/.test(name) === false &&
-      lastName.length >= 3 &&
+      last_name.length >= 3 &&
       name.length < 255 &&
-      /[^a-zA-Zა-ჰ]/.test(lastName) === false &&
+      /[^a-zA-Zა-ჰ]/.test(last_name) === false &&
       email.length > 3 &&
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) === true &&
       email.includes("redberry.ge") === true
@@ -31,18 +37,22 @@ function Form() {
     } else {
       setSHideChevron(true);
     }
-  }, [name, lastName, email]);
+  }, [name, last_name, email, firstQuestion]);
 
   const handleClick = () => {
-    setAnswers({
-      ...answers,
+    setFirstQuestion({
+      ...firstQuestion,
       name,
-      lastName,
+      last_name,
       email,
     });
     history.push("/secondquestion");
   };
-
+  console.log(firstQuestion);
+  // const editName = () => {
+  //   setName(firstQuestion.name);
+  // };
+  console.log(firstQuestion);
   return (
     <>
       <div className="content first__content">
@@ -53,6 +63,7 @@ function Form() {
               <label for="first__name">სახელი*</label>{" "}
               <input
                 required={true}
+                // onFocus={editName}
                 value={name}
                 placeholder="შეიყვანეთ სახელი"
                 type="text"
@@ -85,7 +96,7 @@ function Form() {
               <input
                 required={true}
                 onChange={(e) => setlastName(e.target.value)}
-                value={lastName}
+                value={last_name}
                 placeholder="შეიყვანეთ გვარი"
                 type="text"
                 name="lastst__name"
@@ -93,18 +104,20 @@ function Form() {
               />{" "}
               <p
                 className={`warning min__length ${
-                  lastName.length < 3 && lastName.length > 0 ? "" : "hidden"
+                  last_name.length < 3 && last_name.length > 0 ? "" : "hidden"
                 }`}
               >
                 {" "}
                 გვარის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან
               </p>
-              <p className={`warning ${lastName.length > 255 ? "" : "hidden"}`}>
+              <p
+                className={`warning ${last_name.length > 255 ? "" : "hidden"}`}
+              >
                 გვარის ველი უნდა შედგებოდეს მაქსიმუმ 255 სიმბოლოსგან
               </p>
               <p
                 className={`warning ${
-                  lastName.match(/[^a-zA-Zა-ჰ]/) ? "" : "hidden"
+                  last_name.match(/[^a-zA-Zა-ჰ]/) ? "" : "hidden"
                 }`}
               >
                 გვარის ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს

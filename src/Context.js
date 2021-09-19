@@ -3,10 +3,10 @@ import React, { useState, createContext } from "react";
 export const Context = createContext();
 
 export const StateProvider = (props) => {
-  const [answers, setAnswers] = useState({
+  const [firstQuestion, setFirstQuestion] = useState({
     name: "",
-    email: "asd",
-    last_name: "asd",
+    email: "",
+    last_name: "",
   });
 
   const [secondQuestion, setSecondQuestion] = useState({
@@ -49,7 +49,7 @@ export const StateProvider = (props) => {
   return (
     <Context.Provider
       value={{
-        firstPage: [answers, setAnswers],
+        firstPage: [firstQuestion, setFirstQuestion],
         secondPage: [secondQuestion, setSecondQuestion],
         thirdPage: [thirdQuestion, setThirdQuestion],
         fourthPage: [fourthQuestion, setFourthQuestion],

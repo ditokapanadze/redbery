@@ -27,7 +27,6 @@ function FourthQuestion() {
   });
 
   const meetingFrequency = (e) => {
-    console.log(e.target.value);
     if (e.target.value === "კვირაში ორჯერ") {
       setFourthQuestion({
         ...fourthQuestion,
@@ -72,14 +71,12 @@ function FourthQuestion() {
   };
 
   const handleChange = (e) => {
-    console.log(e.target.name);
     if (e.target.name === "space_opinion") {
       setFourthQuestion({
         ...fourthQuestion,
         opinioAboutSpace: e.target.value,
       });
     } else if (e.target.name === "meeting_opinion") {
-      console.log("test");
       setFourthQuestion({
         ...fourthQuestion,
         opinionAboutMeeting: e.target.value,
@@ -87,14 +84,11 @@ function FourthQuestion() {
     }
   };
 
-  console.log(fourthQuestion);
-
   useEffect(() => {
     if (
       fourthQuestion.meetings.length > 1 &&
       fourthQuestion.officeWork.length > 0
     ) {
-      console.log("test");
       setDisableButton(false);
     } else {
       setDisableButton(true);
